@@ -17,7 +17,7 @@ import com.viaflow.api.service.LinhaOnibusService;
 import com.viaflow.api.validation.BaseValidation;
 
 @RestController
-@RequestMapping("/api/linhaonibus")
+@RequestMapping("/api/linhaOnibus")
 @CrossOrigin(origins = "*")
 public class LinhaOnibusWebController
 		extends BaseController<LinhaOnibus, LinhaOnibusService, BaseValidation<LinhaOnibus>> {
