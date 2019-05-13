@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.constraints.NotEmpty;
 
+import org.hibernate.validator.constraints.br.CNPJ;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -20,6 +21,31 @@ public class Cliente {
 	@NotEmpty
 	private String clienteNome;
 	
+	@CNPJ
+	private String clienteCnpj;
+	
+	@NotEmpty
+	private String endereco;
+	
+	@NotEmpty
+	private Double numero;
+	
+	private String complemento;
+	
+	@NotEmpty
+	private String cidade;
+	
+	@NotEmpty
+	private String bairro;
+	
+	@NotEmpty
+	private String uf;
+	
+	private String fone;
+	
+	private String email;
+	
 	@DBRef
-	private List<LinhaOnibus> bus;
+	private List<LinhaOnibus> linhaOnibus;
+	
 }

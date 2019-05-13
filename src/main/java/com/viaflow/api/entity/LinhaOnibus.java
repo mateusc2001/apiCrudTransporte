@@ -1,8 +1,13 @@
 package com.viaflow.api.entity;
 
+import java.util.List;
+
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.geo.GeoJsonMultiPoint;
+import org.springframework.data.mongodb.core.index.GeoSpatialIndexType;
+import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
@@ -22,4 +27,9 @@ public class LinhaOnibus {
 
 	@NotEmpty
 	private String nome;
+	
+	private List<Coordenadas> coordenadas;
+	
+	@GeoSpatialIndexed(type = GeoSpatialIndexType.GEO_2DSPHERE)
+	private GeoJsonMultiPoint location;	
 }
