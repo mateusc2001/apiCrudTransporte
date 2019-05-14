@@ -23,6 +23,11 @@ public class LinhaOnibusServiceImpl extends BaseServiceImpl<LinhaOnibus, LinhaOn
 	protected LinhaOnibusRepository getRepo() {
 		return this.linhaOnibusRepository;
 	}
+	
+	@Override
+	public LinhaOnibus createOrUpdate(LinhaOnibus linhaOnibus) {
+		return this.getRepo().save(linhaOnibus);
+	}
 
 	@Override
 	public Page<LinhaOnibus> findByNome(String nome, int page, int count) {
