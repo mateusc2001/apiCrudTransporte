@@ -17,16 +17,11 @@ public class GeoJsonMultiPointDeserializer extends JsonDeserializer<GeoJsonMulti
 	@Override
 	public GeoJsonMultiPoint deserialize(JsonParser jsonParser, DeserializationContext deserializationContext) throws IOException {
 		List<Point> points = new ArrayList<Point>();
-		
 		final JsonNode tree = jsonParser.getCodec().readTree(jsonParser);
 		final JsonNode coordsNode = tree.get("coordinates");
-		
 		for (JsonNode jsonNode : coordsNode) {
 			points.add(new Point(jsonNode.get("x").asDouble(), jsonNode.get("y").asDouble()));
-		}
-		
-		GeoJsonMultiPoint geo = new GeoJsonMultiPoint(points);
-		
-		return geo;
+		}		
+		return new GeoJsonMultiPoint(points);
 	}
 }
