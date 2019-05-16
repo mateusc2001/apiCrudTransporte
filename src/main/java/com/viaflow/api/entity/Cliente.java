@@ -28,7 +28,7 @@ public class Cliente {
 	private String endereco;
 	
 	@NotEmpty
-	private Double numero;
+	private String numero;
 	
 	private String complemento;
 	
